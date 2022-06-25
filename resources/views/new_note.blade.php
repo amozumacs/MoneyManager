@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body {
+        font-family: 'Nunito', sans-serif;
+        background-color:#333745;
+        color:#E63462;
+    }
+    .add{
+        display: inline-block;
+        outline: 0;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        border-radius: 4px;
+        font-size: 13px;
+        background-color: #333745;
+        color: white;
+        padding: 10px 20px;
+        font-family: 'Nunito', sans-serif;
+    }
+</style>
+<head>
+<title>Add Income</title>
+</head>
+<body>
+<form method="POST" action="{{
+action([App\Http\Controllers\NotesController::class, 'store']) }}">
+@csrf
+<label for="title">Title: </label>
+<input type="text" name="Title" id="Title">
+<label for="Information">Information: </label>
+<input type="text" name="Information" id="Information">
+<input type="submit" class="add" value="add">
+</form>
+</body>
+</html>
