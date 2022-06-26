@@ -8,20 +8,20 @@
     }
 </style>
 <head>
-<title>Add Income</title>
+<title>{{ __('messages.AddInc') }}</title>
 </head>
 <body>
 <form method="POST" action="{{
 action([App\Http\Controllers\IncomeController::class, 'store']) }}">
 @csrf
-<label for="name">Name: </label>
+<label for="name">{{ __('messages.Name') }}: </label>
 <input type="text" name="Name" id="Name">
-<label for="description">Source: </label>
+<label for="description">{{ __('messages.Source') }}: </label>
 <input type="text" name="Source" id="Source">
-<label for="duration">Amount: </label>
+<label for="duration">{{ __('messages.Amount') }}: </label>
 <input type="text" name="Amount" id="Amount">
 
-<input type="submit" value="add">
+<input type="submit" value="{{ __('messages.add') }}">
 </form>
 </body>
 </html>

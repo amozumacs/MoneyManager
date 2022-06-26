@@ -44,33 +44,33 @@ use App\Http\Controllers\IncomeController;
         </ul>
     </div>
 @endif
-<h2>Update Income data:</h2>
+<h2>{{ __('messages.Update Income') }}:</h2>
 <form action="{{ action([IncomeController::class, 'update'], $income->id ) }}" method="post">
     @csrf
     @method('PUT')
     <table>
          <tr>
-            <th>New Name:</th>
+            <th>{{ __('messages.New Name') }}:</th>
             <td>
                 <input type="text" name="Name" id="Name" value ="{{ $income->Name }}" />
             </td>
         </tr>
         <tr>
-            <th>New Source:</th>
+            <th>{{ __('messages.New Source') }}:</th>
             <td>
                 <input type="text" name="Source" id="Source" value="{{ $income->Source }}" />
             </td>
         </tr>
 
         <tr>
-            <th>New Amount:</th>
+            <th>{{ __('messages.New Amount') }}:</th>
             <td>
                 <input type="text" name="Amount" id="Amount" value ="{{ $income->Amount }}" />
             </td>
         </tr>
         <tr>    
             <td>
-                <input type="submit" class="submit" value="add" />
+                <input type="submit" class="submit" value="{{ __('messages.add') }}" />
             </td>
         </tr>
 

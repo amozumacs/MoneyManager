@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Income</title>
+        <title>{{ __('messages.Income') }}</title>
     </head>
     <style>
             body {
@@ -58,17 +58,17 @@
             }    
         </style>
     <body>
-        <h1>Income</h1>
+        <h1>{{ __('messages.Income') }}</h1>
        
         @if(count($incomes)==0)
-        <p color='red'> There are no records in the database!</p> @else
+        <p color='red'> {{ __('messages.NoRecord') }}!</p> @else
         <table style="border: 1px solid black">
         
         <tr>
-        <td> Name </td>
-        <td> Source </td>
-        <td> Amount </td>
-        <td> Date </td>
+        <td> {{ __('messages.Name') }} </td>
+        <td> {{ __('messages.Source') }} </td>
+        <td> {{ __('messages.Amount') }} </td>
+        <td> {{ __('messages.Date') }} </td>
         </tr>
         @foreach ($incomes as $income)
         <tr>
@@ -79,30 +79,30 @@
         <td> 
             <form method="POST" action="{{
             action([App\Http\Controllers\IncomeController::class, 'destroy'], $income->id)
-            }}">@csrf @method('DELETE')<input type="submit" value="delete"></form> 
+            }}">@csrf @method('DELETE')<input type="submit" value="{{ __('messages.Delete') }}"></form> 
             </td>
             <td> 
                  
-            <a href="{{ route('income.edit',$income->id)}}" class="return">Edit</a>
+            <a href="{{ route('income.edit',$income->id)}}" class="return">{{ __('messages.Edit') }}</a>
             </td>
             @endforeach
         </table>
         @endif
-        <p> <input  type="button" class="gradient-border" value="New Income" onclick="newIncome()"> </p>
+        <p> <input  type="button" class="gradient-border" value="{{ __('messages.New Income') }}" onclick="newIncome()"> </p>
         <script>
         function newIncome() {
         window.location.href="/income/create";
         }
         </script>
          @can('user')
-        <p> <input  type="button" class="button" class="search" value="Income Search" onclick="IncomeSearch()"> </p>
+        <p> <input  type="button" class="button" class="search" value="{{ __('messages.Income Search') }}" onclick="IncomeSearch()"> </p>
         @endcan
         <script>
         function IncomeSearch() {
         window.location.href="/IncomeSearch";
         }
         </script>
-         <a href="{{ url('/menu') }}"class="return">Return</a> 
+         <a href="{{ url('/menu') }}"class="return">{{ __('messages.Return') }}</a> 
          
     </body>
 </html>

@@ -52,44 +52,44 @@
     <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Money Management</a>
+      <a class="navbar-brand" href="#">{{ __('messages.Money Management') }}</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Menu</a></li>
-      <li><a href="{{ url('/income') }}">Income</a></li>
-      <li><a href="{{ url('/expense') }}">Expense</a></li>
-      <li><a href="{{ url('/notes') }}">Notes</a></li>
-      <li><a href="{{ url('/welcome') }}">Welcome Screen</a></li>
+      <li class="active"><a href="#">{{ __('messages.Menu') }}</a></li>
+      <li><a href="{{ url('/income') }}">{{ __('messages.Income') }}</a></li>
+      <li><a href="{{ url('/expense') }}">{{ __('messages.Expense') }}</a></li>
+      <li><a href="{{ url('/notes') }}">{{ __('messages.Notes') }}</a></li>
+      <li><a href="{{ url('/welcome') }}">{{ __('messages.Welcome') }}</a></li>
       @can('user')
-      <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+      <li><a href="{{ url('/dashboard') }}">{{ __('messages.Dashboard') }}</a></li>
       @endcan
       @can('is-admin')
-      <li><a href="{{ url('/admin') }}" class="admin">AdminBoard</a></li>
+      <li><a href="{{ url('/admin') }}" class="admin">{{ __('messages.AdminBoard') }}</a></li>
      @endcan
     </ul>
   </div>
 </nav>
-        <h1>Welcome to my Money Managment app</h1>
-        <h8>Made by Aigars Mozumačs</h8>
+        <h1>{{ __('messages.Intro') }}</h1>
+        <h8>{{ __('messages.MadeBy') }}</h8>
         <h8>am21183</h8>
         <div class="flex">
         
         <div class="Totals">
-        <h4> Totals </h4>
-        <p>Total Expenses: {{$ExpMax}} </p>
-        <p>Expense Count: {{$ExpCount}}</p>
-        <p>Total Income: {{$IncMax}}</p>
-        <p>Income Count: {{$IncCount}}</p>
-        <p class="balance">Total Balance: {{ $IncMax - $ExpMax}}</p>
+        <h4> {{ __('messages.Totals') }} </h4>
+        <p>{{ __('messages.TotalExp') }}: {{$ExpMax}} </p>
+        <p>{{ __('messages.ExpCount') }}: {{$ExpCount}}</p>
+        <p>{{ __('messages.TotalInc') }}: {{$IncMax}}</p>
+        <p>{{ __('messages.IncCount') }}: {{$IncCount}}</p>
+        <p class="balance">{{ __('messages.TotalBal') }}: {{ $IncMax - $ExpMax}}</p>
         </div>
         
         <div class="Monthly">
-        <h4> Monthly Totals </h4>
-        <p>Monthly Expenses: {{$MExpMax}} </p>
-        <p>Monthly Expense Count: {{$MExpCount}}</p>
-        <p>Monthly Income: {{$MIncMax}}</p>
-        <p>Monthly Income Count: {{$MIncCount}}</p>
-        <p class = "mbalance">Monthly Balance: {{ $MIncMax -$MExpMax }}</p>
+        <h4> {{ __('messages.MonthlyTotals') }} </h4>
+        <p>{{ __('messages.MonthlyExp') }}: {{$MExpMax}} </p>
+        <p>{{ __('messages.MonthlyExpCount') }}: {{$MExpCount}}</p>
+        <p>{{ __('messages.MonthlyInc') }}: {{$MIncMax}}</p>
+        <p>{{ __('messages.MonthlyIncCount') }}: {{$MIncCount}}</p>
+        <p class = "mbalance">{{ __('messages.MonthlyBal') }}: {{ $MIncMax -$MExpMax }}</p>
         </div>
         </div>
    

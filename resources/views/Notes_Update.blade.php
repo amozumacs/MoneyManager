@@ -31,19 +31,19 @@ use App\Http\Controllers\NotesController;
         </ul>
     </div>
 @endif
-<h2>Update Note data:</h2>
+<h2>{{ __('messages.UpdateNot') }}:</h2>
 <form action="{{ action([NotesController::class, 'update'], $note->id ) }}" method="post">
     @csrf
     @method('PUT')
     <table>
          <tr>
-            <th>New Title:</th>
+            <th>{{ __('messages.NewNotTitle') }}:</th>
             <td>
                 <input type="text" name="Title" id="Title" value ="{{ $note->Title }}" />
             </td>
         </tr>
         <tr>
-            <th>Information:</th>
+            <th>{{ __('messages.NewNotInformation') }}:</th>
             <td>
                 <input type="text" name="Information" id="Information" value="{{ $note->Information }}" />
             </td>
@@ -52,7 +52,7 @@ use App\Http\Controllers\NotesController;
       
         <tr>    
             <td>
-                <input type="submit" class="update" value="add" />
+                <input type="submit" class="update" value="{{ __('messages.add')}}" />
             </td>
         </tr>
 

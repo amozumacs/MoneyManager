@@ -20,6 +20,19 @@ use App\Http\Controllers\ExpenseController;
         padding: 10px 20px;
         font-family: 'Nunito', sans-serif;
     }
+    .edit,a,input[type=button], input[type=submit], input[type=reset]{
+                display: inline-block;
+                outline: 0;
+                border: none;
+                cursor: pointer;
+                font-weight: 600;
+                border-radius: 4px;
+                font-size: 13px;
+                background-color: #1D1128;
+                color: white;
+                padding: 10px 20px;
+                font-family: 'Nunito', sans-serif;
+            }    
 </style>
 
 @if ($errors->any())
@@ -31,33 +44,33 @@ use App\Http\Controllers\ExpenseController;
         </ul>
     </div>
 @endif
-<h2>Update Income data:</h2>
+<h2>{{ __('messages.Update Income') }}:</h2>
 <form action="{{ action([ExpenseController::class, 'update'], $expense->id ) }}" method="post">
     @csrf
     @method('PUT')
     <table>
          <tr>
-            <th>New Name:</th>
+            <th>{{ __('messages.New Name') }}:</th>
             <td>
                 <input type="text" name="Name" id="Name" value ="{{ $expense->Name }}" />
             </td>
         </tr>
         <tr>
-            <th>New Source:</th>
+            <th>{{ __('messages.New Source') }}:</th>
             <td>
                 <input type="text" name="Source" id="Source" value="{{ $expense->Source }}" />
             </td>
         </tr>
 
         <tr>
-            <th>New Amount:</th>
+            <th>{{ __('messages.New Amount') }}:</th>
             <td>
                 <input type="text" name="Amount" id="Amount" value ="{{ $expense->Amount }}" />
             </td>
         </tr>
         <tr>    
             <td>
-                <input type="submit" class="add" value="add" />
+                <input type="submit" class="add" value="{{ __('messages.add') }}" />
             </td>
         </tr>
 

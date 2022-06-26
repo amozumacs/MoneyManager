@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Expenses</title>
+        <title>{{ __('messages.Users') }}</title>
     </head>
     <style>
            body {
@@ -59,16 +59,16 @@
 
         </style>
     <body>
-        <h1>Expense</h1>
+        <h1>{{ __('messages.Users') }}</h1>
        
         @if(count($users)==0)
-        <p color='red'> There are no records in the database!</p> @else
+        <p color='red'> {{ __('messages.NoRecord') }}!</p> @else
         <table style="border: 1px solid black">
        
         <tr>
-        <td> Name </td>
-        <td> Email </td>
-        <td> Role </td>
+        <td> {{ __('messages.Name') }} </td>
+        <td> {{ __('messages.Email') }} </td>
+        <td> {{ __('messages.Role') }} </td>
         </tr>
         @foreach ($users as $user)
         <tr>
@@ -77,7 +77,7 @@
         <td> {{ $user->role }} </td>
         <td> <form method="POST" action="{{
             action([App\Http\Controllers\AdminController::class, 'destroy'], $user->id)
-            }}">@csrf @method('DELETE')<input type="submit" value="delete"></form> 
+            }}">@csrf @method('DELETE')<input type="submit" value="{{ __('messages.Delete') }}"></form> 
             </td>
             @endforeach
         </table>

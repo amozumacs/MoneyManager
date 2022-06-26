@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Expenses</title>
+        <title>{{ __('messages.Expense') }}</title>
     </head>
     <style>
            body {
@@ -59,17 +59,17 @@
 
         </style>
     <body>
-        <h1>Expense</h1>
+        <h1>{{ __('messages.Expense') }}</h1>
        
         @if(count($expenses)==0)
-        <p color='red'> There are no records in the database!</p> @else
+        <p color='red'> {{ __('messages.NoRecord') }}</p> @else
         <table style="border: 1px solid black">
         
         <tr>
-        <td> Name </td>
-        <td> Source </td>
-        <td> Amount </td>
-        <td> Date </td>
+        <td> {{ __('messages.Name') }} </td>
+        <td> {{ __('messages.Source') }} </td>
+        <td> {{ __('messages.Amount') }} </td>
+        <td> {{ __('messages.Date') }} </td>
         </tr>
         @foreach ($expenses as $expense)
         <tr>
@@ -80,29 +80,29 @@
         <td> 
             <form method="POST" action="{{
             action([App\Http\Controllers\ExpenseController::class, 'destroy'], $expense->id)
-            }}">@csrf @method('DELETE')<input type="submit" value="delete"></form> 
+            }}">@csrf @method('DELETE')<input type="submit" value="{{ __('messages.Delete') }}"></form> 
             </td>
             <td> 
                  
-            <a href="{{ route('expense.edit',$expense->id)}}" class="return">Edit</a>
+            <a href="{{ route('expense.edit',$expense->id)}}" class="return">{{ __('messages.Edit') }}</a>
             </td>
             @endforeach
         </table>
         @endif
-        <p> <input  type="button" value="New Expense" onclick="newExpense()"> </p>
+        <p> <input  type="button" value="{{ __('messages.New Expense') }}" onclick="newExpense()"> </p>
         <script>
         function newExpense() {
         window.location.href="/expense/create";
         }
         </script>
          @can('user')
-        <p> <input  type="button" class="button" class="search" value="Expense Search" onclick="ExpenseSearch()"> </p>
+        <p> <input  type="button" class="button" class="search" value="{{ __('messages.Expense Search') }}" onclick="ExpenseSearch()"> </p>
         @endcan
         <script>
         function ExpenseSearch() {
         window.location.href="/ExpenseSearch";
         }
         </script>
-         <a href="{{ url('/menu') }}"class="return">Return</a> 
+         <a href="{{ url('/menu') }}"class="return">{{ __('messages.Return') }}</a> 
     </body>
 </html>

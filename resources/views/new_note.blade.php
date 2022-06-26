@@ -21,17 +21,17 @@
     }
 </style>
 <head>
-<title>Add Income</title>
+<title>{{ __('messages.AddNote') }}</title>
 </head>
 <body>
 <form method="POST" action="{{
 action([App\Http\Controllers\NotesController::class, 'store']) }}">
 @csrf
-<label for="title">Title: </label>
+<label for="title">{{ __('messages.TitleNot') }}: </label>
 <input type="text" name="Title" id="Title">
-<label for="Information">Information: </label>
+<label for="Information">{{ __('messages.InformationNot') }}: </label>
 <input type="text" name="Information" id="Information">
-<input type="submit" class="add" value="add">
+<input type="submit" class="add" value="{{ __('messages.add') }}">
 </form>
 </body>
 </html>

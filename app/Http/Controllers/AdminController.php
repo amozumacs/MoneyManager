@@ -21,7 +21,7 @@ class AdminController extends Controller
     public function destroy($id)
     {
         User::findOrFail($id)->delete(); 
-        return redirect('admin_dash'); 
+        return redirect('/admin'); 
     }
 
 }

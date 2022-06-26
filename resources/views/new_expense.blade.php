@@ -21,20 +21,20 @@
     }
 </style>
 <head>
-<title>Add Expense</title>
+<title>{{ __('messages.AddExp') }}</title>
 </head>
 <body>
 <form method="POST" action="{{
 action([App\Http\Controllers\ExpenseController::class, 'store']) }}">
 @csrf
-<label for="Name">Name: </label>
+<label for="Name">{{ __('messages.Name') }}: </label>
 <input type="text" name="Name" id="Name">
-<label for="Source">Source: </label>
+<label for="Source">{{ __('messages.Source') }}: </label>
 <input type="text" name="Source" id="Source">
-<label for="Amount">Amount: </label>
+<label for="Amount">{{ __('messages.Amount') }}: </label>
 <input type="text" name="Amount" id="Amount">
 
-<input type="submit" class="add" value="add">
+<input type="submit" class="add" value="{{ __('messages.add') }}">
 </form>
 </body>
 </html>

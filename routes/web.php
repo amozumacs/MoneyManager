@@ -47,5 +47,7 @@ Route::get('notes/create', [NotesController::class, 'create'])->middleware(['aut
 Route::get('NotesSearch', [NotesController::class, 'search'])->middleware(['auth']);
 use App\Http\Controllers\AdminController;
 Route::resource('/admin', AdminController::class);;
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
+
 
 

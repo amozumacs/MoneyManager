@@ -33,19 +33,32 @@ use App\Http\Controllers\IncomeController;
                 padding: 10px 20px;
                 font-family: 'Nunito', sans-serif;
             }
+            .edit,a,input[type=button], input[type=submit], input[type=reset]{
+                display: inline-block;
+                outline: 0;
+                border: none;
+                cursor: pointer;
+                font-weight: 600;
+                border-radius: 4px;
+                font-size: 13px;
+                background-color: #1D1128;
+                color: white;
+                padding: 10px 20px;
+                font-family: 'Nunito', sans-serif;
+            }    
  </style>
-<h1> Income Search </h1>
+<h1> {{ __('messages.Income Search') }} </h1>
 <form method="GET" action="{{
 action([App\Http\Controllers\IncomeController::class, 'search']) }}">
     <input type="text" name="search" required/>
-    <button type="submit" class="search">Search</button>
+    <button type="submit" class="search">{{ __('messages.Search') }}</button>
 </form>
 <table style="border: 1px solid black">
 <tr>
-        <td> Name </td>
-        <td> Source </td>
-        <td> Amount </td>
-        <td> Date </td>
+        <td> {{ __('messages.Name') }} </td>
+        <td> {{ __('messages.Source') }} </td>
+        <td> {{ __('messages.Amount') }} </td>
+        <td> {{ __('messages.Date') }} </td>
         <td> </td>
         </tr>
 @if($incomes->isNotEmpty())
@@ -60,7 +73,8 @@ action([App\Http\Controllers\IncomeController::class, 'search']) }}">
 </table>
 @else 
     <div>
-        <h2>No income sources found</h2>
+        <h2>{{ __('messages.NoIncome') }}</h2>
     </div>
 @endif
+<a href="{{ url('/menu') }}"class="return">{{ __('messages.Return') }}</a> 
 </html>

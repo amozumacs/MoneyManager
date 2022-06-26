@@ -32,30 +32,44 @@ use App\Http\Controllers\NotesController;
                 border-color: #E76F51;
 	              background-color:#2F3061; 
              }
-             
+             .edit,a,input[type=button], input[type=submit], input[type=reset]{
+                display: inline-block;
+                text-decoration:none;
+                outline: 0;
+                border: none;
+                cursor: pointer;
+                font-weight: 600;
+                border-radius: 4px;
+                font-size: 13px;
+                background-color:#333745;
+                color: white;
+                padding: 10px 20px;
+                font-family: 'Nunito', sans-serif;
+            }    
         </style>
-<h1> Notes Search </h1>
+<h1> {{ __('messages.Note Search') }} </h1>
 <form method="GET" action="{{
 action([App\Http\Controllers\NotesController::class, 'search']) }}">
     <input type="text" name="search" required/>
-    <button type="submit" class="search">Search</button>
+    <button type="submit" class="search">{{ __('messages.Search') }}</button>
 </form>
 <table style="border: 1px solid black">
 <tr>
-        <td> Title </td>
-        <td> Information </td>
+        <td> {{ __('messages.TitleNot') }} </td>
+        <td> {{ __('messages.InformationNot') }} </td>
 </tr>
 @if($notes->isNotEmpty())
 @foreach ($notes as $note)
         <tr>
-        <td> {{ $note->title }} </td>
-        <td> {{ $note->information }} </td>
+        <td> {{ $note->Title }} </td>
+        <td> {{ $note->Information }} </td>
 </tr>
         @endforeach
 </table>
 @else 
     <div>
-        <h2>No notes found</h2>
+        <h2>{{ __('messages.NoNot') }}</h2>
     </div>
 @endif
+<a href="{{ url('/menu') }}"class="return">{{ __('messages.Return') }}</a> 
 </html>

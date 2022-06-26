@@ -4,7 +4,7 @@ use App\Http\Controllers\ExpenseController;
 @endphp
 <!DOCTYPE html>
 <html>
-<h1> Expense Search </h1>
+<h1> {{ __('messages.Expense Search') }} </h1>
 <style>
         body {
                 font-family: 'Nunito', sans-serif;
@@ -39,14 +39,14 @@ use App\Http\Controllers\ExpenseController;
 <form method="GET" action="{{
 action([App\Http\Controllers\ExpenseController::class, 'search']) }}">
     <input type="text" name="search" required/>
-    <button type="submit"  class="search">Search</button>
+    <button type="submit"  class="search"> {{ __('messages.Search') }}</button>
 </form>
 <table style="border: 1px solid black">
 <tr>
-        <td> Name </td>
-        <td> Source </td>
-        <td> Amount </td>
-        <td> Date </td>
+        <td>  {{ __('messages.Name') }} </td>
+        <td>  {{ __('messages.Source') }} </td>
+        <td>  {{ __('messages.Amount') }} </td>
+        <td>  {{ __('messages.Date') }} </td>
         <td> </td>
         </tr>
 @if($expenses->isNotEmpty())
@@ -61,7 +61,8 @@ action([App\Http\Controllers\ExpenseController::class, 'search']) }}">
 </table>
 @else 
     <div>
-        <h2>No expense sources found</h2>
+        <h2> {{ __('messages.NoExpense') }}</h2>
     </div>
-@endif
+@endif 
+<a href="{{ url('/menu') }}"class="return">{{ __('messages.Return') }}</a> 
 </html>

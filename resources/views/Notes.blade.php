@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Notes</title>
+        <title>{{ __('messages.Notes') }}</title>
     </head>
     <style>
             body {
@@ -41,15 +41,15 @@
             }
         </style>
     <body>
-        <h1>Notes</h1>
+        <h1>{{ __('messages.Notes') }}</h1>
         @if(count($notes)==0)
-        <p color='red'> There are no records in the database!</p> @else
+        <p color='red'> {{ __('messages.NoRecord') }}</p> @else
         @foreach ($notes as $note)
         <table style="border: 1px solid black">
         
         <tr>
-        <td> Title </td>
-        <td> Information </td>
+        <td> {{ __('messages.TitleNot') }} </td>
+        <td> {{ __('messages.InformationNot') }} </td>
         </tr>
         
         <tr>
@@ -58,17 +58,17 @@
         <td> 
             <form method="POST" action="{{
             action([App\Http\Controllers\NotesController::class, 'destroy'], $note->id)
-            }}">@csrf @method('DELETE')<input type="submit" value="delete"></form> 
+            }}">@csrf @method('DELETE')<input type="submit" value="{{ __('messages.Delete') }}"></form> 
             </td>
             <td> 
                  
-            <a href="{{ route('notes.edit',$note->id)}}" class="edit" >Edit</a>
+            <a href="{{ route('notes.edit',$note->id)}}" class="edit" >{{ __('messages.Edit') }}</a>
             </td>
             @endforeach
         </table>
         @endif
         @can('user')
-        <p> <input  type="button" value="New Note" onclick="newNote()"> </p>
+        <p> <input  type="button" value="{{ __('messages.NewNot') }}" onclick="newNote()"> </p>
         @endcan
         <script>
         function newNote() {
@@ -76,13 +76,13 @@
         }
         </script>
          @can('user')
-          <p> <input  type="button" value="Note Search" onclick="NoteSearch()"> </p>
+          <p> <input  type="button" value="{{ __('messages.Note Search') }}" onclick="NoteSearch()"> </p>
           @endcan
         <script>
         function NoteSearch() {
         window.location.href="/NotesSearch";
         }
         </script>
-         <a href="{{ url('/menu') }}"class="return">Return</a> 
+         <a href="{{ url('/menu') }}"class="return">{{ __('messages.Return') }}</a> 
     </body>
 </html>
