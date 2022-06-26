@@ -1,7 +1,11 @@
 @php
 use App\Http\Controllers\NotesController;
 @endphp
-
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
 <style>
     body {
         font-family: 'Nunito', sans-serif;
@@ -60,3 +64,4 @@ use App\Http\Controllers\NotesController;
 
     </table>
 </form>
+</html>

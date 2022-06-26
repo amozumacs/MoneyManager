@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>{{ __('messages.Expense') }}</title>
+        <meta charset="UTF-8">
     </head>
     <style>
            body {

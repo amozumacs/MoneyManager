@@ -22,6 +22,7 @@
 </style>
 <head>
 <title>{{ __('messages.AddNote') }}</title>
+  <meta charset="UTF-8">
 </head>
 <body>
 <form method="POST" action="{{

@@ -4,6 +4,9 @@ use App\Http\Controllers\ExpenseController;
 @endphp
 <!DOCTYPE html>
 <html>
+<head>
+  <meta charset="UTF-8">
+</head>
 <h1> {{ __('messages.Expense Search') }} </h1>
 <style>
         body {

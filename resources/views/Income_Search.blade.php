@@ -4,6 +4,9 @@ use App\Http\Controllers\IncomeController;
 @endphp
 <!DOCTYPE html>
 <html>
+<head>
+  <meta charset="UTF-8">
+</head>
 <style>
         body {
                 font-family: 'Nunito', sans-serif;

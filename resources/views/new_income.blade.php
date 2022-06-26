@@ -8,6 +8,7 @@
     }
 </style>
 <head>
+  <meta charset="UTF-8">
 <title>{{ __('messages.AddInc') }}</title>
 </head>
 <body>

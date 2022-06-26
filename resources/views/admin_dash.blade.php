@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>{{ __('messages.Users') }}</title>
     </head>
     <style>

@@ -1,6 +1,11 @@
 @php
 use App\Http\Controllers\ExpenseController;
 @endphp
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
 <style>
     body {
         font-family: 'Nunito', sans-serif;
@@ -78,3 +83,4 @@ use App\Http\Controllers\ExpenseController;
 
     </table>
 </form>
+</html>
