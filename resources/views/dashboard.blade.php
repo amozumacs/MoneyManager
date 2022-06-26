@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <title>{{ __('messages.Dashboard') }}</title>
 </head>
 <x-app-layout>
     <x-slot name="header">
@@ -33,19 +34,19 @@
                 {{ __('messages.LogIn') }}
                 </div>
                 <div class="p-6 bg-white border-b border-gray-200">
-                <a href="{{ url('/menu') }}"class="return">{{ __('messages.Menu') }}</a> 
+                <a href="{{ url('/menu') }}" class="return">{{ __('messages.Menu') }}</a> 
                 </div>
                 <div class="p-6 bg-white border-b border-gray-200">
-                <a href="{{ url('/welcome') }}"class="return">{{ __('messages.Welcome') }}</a> 
+                <a href="{{ url('/welcome') }}" class="return">{{ __('messages.Welcome') }}</a> 
                 </div>
                 <div class="p-6 bg-white border-b border-gray-200">
-                <a href="{{ url('/income') }}"class="return">{{ __('messages.Income') }}</a> 
+                <a href="{{ url('/income') }}" class="return">{{ __('messages.Income') }}</a> 
                 </div>
                 <div class="p-6 bg-white border-b border-gray-200">
-                <a href="{{ url('/expense') }}"class="return">{{ __('messages.Expense') }}</a> 
+                <a href="{{ url('/expense') }}" class="return">{{ __('messages.Expense') }}</a> 
                 </div>
                 <div class="p-6 bg-white border-b border-gray-200">
-                <a href="{{ url('/expense') }}"class="return">{{ __('messages.Notes') }}</a> 
+                <a href="{{ url('/expense') }}" class="return">{{ __('messages.Notes') }}</a> 
                 </div>
             </div>
         </div>

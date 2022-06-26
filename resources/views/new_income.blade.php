@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html>
-<style>
-    body {
-        font-family: 'Nunito', sans-serif;
-        background-color:#1D1128;
-        color:#E5D4ED;
-    }
-</style>
 <head>
   <meta charset="UTF-8">
-<title>{{ __('messages.AddInc') }}</title>
+  <title>{{ __('messages.AddInc') }}</title>
 </head>
 <body>
 <form method="POST" action="{{
@@ -26,3 +19,10 @@ action([App\Http\Controllers\IncomeController::class, 'store']) }}">
 </form>
 </body>
 </html>
+<style>
+    body {
+        font-family: 'Nunito', sans-serif;
+        background-color:#1D1128;
+        color:#E5D4ED;
+    }
+</style>

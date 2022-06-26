@@ -5,7 +5,51 @@ use App\Http\Controllers\ExpenseController;
 <html>
 <head>
   <meta charset="UTF-8">
+  <title>{{ __('messages.Update Income') }}</title>
 </head>
+<body>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+<h2>{{ __('messages.Update Income') }}:</h2>
+<form action="{{ action([ExpenseController::class, 'update'], $expense->id ) }}" method="post">
+    @csrf
+    @method('PUT')
+    <table>
+        <tr>
+            <th>{{ __('messages.New Name') }}:</th>
+            <td>
+                <input type="text" name="Name" id="Name" value ="{{ $expense->Name }}" />
+            </td>
+        </tr>
+        <tr>
+            <th>{{ __('messages.New Source') }}:</th>
+            <td>
+                <input type="text" name="Source" id="Source" value="{{ $expense->Source }}" />
+            </td>
+        </tr>
+
+        <tr>
+            <th>{{ __('messages.New Amount') }}:</th>
+            <td>
+                <input type="text" name="Amount" id="Amount" value ="{{ $expense->Amount }}" />
+            </td>
+        </tr>
+        <tr>    
+            <td>
+                <input type="submit" class="add" value="{{ __('messages.add') }}" />
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
 <style>
     body {
         font-family: 'Nunito', sans-serif;
@@ -39,48 +83,3 @@ use App\Http\Controllers\ExpenseController;
                 font-family: 'Nunito', sans-serif;
             }    
 </style>
-
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-<h2>{{ __('messages.Update Income') }}:</h2>
-<form action="{{ action([ExpenseController::class, 'update'], $expense->id ) }}" method="post">
-    @csrf
-    @method('PUT')
-    <table>
-         <tr>
-            <th>{{ __('messages.New Name') }}:</th>
-            <td>
-                <input type="text" name="Name" id="Name" value ="{{ $expense->Name }}" />
-            </td>
-        </tr>
-        <tr>
-            <th>{{ __('messages.New Source') }}:</th>
-            <td>
-                <input type="text" name="Source" id="Source" value="{{ $expense->Source }}" />
-            </td>
-        </tr>
-
-        <tr>
-            <th>{{ __('messages.New Amount') }}:</th>
-            <td>
-                <input type="text" name="Amount" id="Amount" value ="{{ $expense->Amount }}" />
-            </td>
-        </tr>
-        <tr>    
-            <td>
-                <input type="submit" class="add" value="{{ __('messages.add') }}" />
-            </td>
-        </tr>
-
-
-
-    </table>
-</form>
-</html>

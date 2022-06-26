@@ -5,27 +5,9 @@ use App\Http\Controllers\NotesController;
 <html>
 <head>
   <meta charset="UTF-8">
+  <title>{{ __('messages.UpdateNot') }}:</title>
 </head>
-<style>
-    body {
-        font-family: 'Nunito', sans-serif;
-        background-color:#333745;
-        color:#E63462;
-    }
-    .update{
-        display: inline-block;
-        outline: 0;
-        border: none;
-        cursor: pointer;
-        font-weight: 600;
-        border-radius: 4px;
-        font-size: 13px;
-        background-color: #333745;
-        color: white;
-        padding: 10px 20px;
-        font-family: 'Nunito', sans-serif;
-    }
-</style>
+
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -65,3 +47,23 @@ use App\Http\Controllers\NotesController;
     </table>
 </form>
 </html>
+<style>
+    body {
+        font-family: 'Nunito', sans-serif;
+        background-color:#333745;
+        color:#E63462;
+    }
+    .update{
+        display: inline-block;
+        outline: 0;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        border-radius: 4px;
+        font-size: 13px;
+        background-color: #333745;
+        color: white;
+        padding: 10px 20px;
+        font-family: 'Nunito', sans-serif;
+    }
+</style>

@@ -4,41 +4,10 @@ use App\Http\Controllers\IncomeController;
 <!DOCTYPE html>
 <html>
 <head>
+  <title>{{ __('messages.Update Income') }}</title>
   <meta charset="UTF-8">
 </head>
-<style>
-    body {
-        font-family: 'Nunito', sans-serif;
-        background-color:#1D1128;
-        color:#E5D4ED;
-    }
-    .edit,a,input[type=button], input[type=submit], input[type=reset]{
-              display: inline-block;
-              outline: 0;
-              border: none;
-              cursor: pointer;
-              font-weight: 600;
-              border-radius: 4px;
-              font-size: 13px;
-              background-color: #1D1128;
-              color: white;
-              padding: 10px 20px;
-            }
-            .submit{
-                display: inline-block;
-                outline: 0;
-                border: none;
-                cursor: pointer;
-                font-weight: 600;
-                border-radius: 4px;
-                font-size: 13px;
-                background-color: #1D1128;
-                color: white;
-                padding: 10px 20px;
-                font-family: 'Nunito', sans-serif;
-            }
-            
-</style>
+
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -83,4 +52,36 @@ use App\Http\Controllers\IncomeController;
     </table>
 </form>
 </html>
-
+<style>
+    body {
+        font-family: 'Nunito', sans-serif;
+        background-color:#1D1128;
+        color:#E5D4ED;
+    }
+    .edit,a,input[type=button], input[type=submit], input[type=reset]{
+              display: inline-block;
+              outline: 0;
+              border: none;
+              cursor: pointer;
+              font-weight: 600;
+              border-radius: 4px;
+              font-size: 13px;
+              background-color: #1D1128;
+              color: white;
+              padding: 10px 20px;
+            }
+            .submit{
+                display: inline-block;
+                outline: 0;
+                border: none;
+                cursor: pointer;
+                font-weight: 600;
+                border-radius: 4px;
+                font-size: 13px;
+                background-color: #1D1128;
+                color: white;
+                padding: 10px 20px;
+                font-family: 'Nunito', sans-serif;
+            }
+            
+</style>

@@ -1,5 +1,22 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+  <title>{{ __('messages.AddNote') }}</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+<form method="POST" action="{{
+action([App\Http\Controllers\NotesController::class, 'store']) }}">
+@csrf
+<label for="title">{{ __('messages.TitleNot') }}: </label>
+<input type="text" name="Title" id="Title">
+<label for="Information">{{ __('messages.InformationNot') }}: </label>
+<input type="text" name="Information" id="Information">
+<input type="submit" class="add" value="{{ __('messages.add') }}">
+</form>
+</body>
+</html>
 <style>
     body {
         font-family: 'Nunito', sans-serif;
@@ -20,19 +37,3 @@
         font-family: 'Nunito', sans-serif;
     }
 </style>
-<head>
-<title>{{ __('messages.AddNote') }}</title>
-  <meta charset="UTF-8">
-</head>
-<body>
-<form method="POST" action="{{
-action([App\Http\Controllers\NotesController::class, 'store']) }}">
-@csrf
-<label for="title">{{ __('messages.TitleNot') }}: </label>
-<input type="text" name="Title" id="Title">
-<label for="Information">{{ __('messages.InformationNot') }}: </label>
-<input type="text" name="Information" id="Information">
-<input type="submit" class="add" value="{{ __('messages.add') }}">
-</form>
-</body>
-</html>

@@ -2,7 +2,23 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <title>{{ __('messages.AddExp') }}</title>
 </head>
+<body>
+<form method="POST" action="{{
+action([App\Http\Controllers\ExpenseController::class, 'store']) }}">
+@csrf
+<label for="Name">{{ __('messages.Name') }}: </label>
+<input type="text" name="Name" id="Name">
+<label for="Source">{{ __('messages.Source') }}: </label>
+<input type="text" name="Source" id="Source">
+<label for="Amount">{{ __('messages.Amount') }}: </label>
+<input type="text" name="Amount" id="Amount">
+
+<input type="submit" class="add" value="{{ __('messages.add') }}">
+</form>
+</body>
+</html>
 <style>
     body {
         font-family: 'Nunito', sans-serif;
@@ -23,21 +39,3 @@
         font-family: 'Nunito', sans-serif;
     }
 </style>
-<head>
-<title>{{ __('messages.AddExp') }}</title>
-</head>
-<body>
-<form method="POST" action="{{
-action([App\Http\Controllers\ExpenseController::class, 'store']) }}">
-@csrf
-<label for="Name">{{ __('messages.Name') }}: </label>
-<input type="text" name="Name" id="Name">
-<label for="Source">{{ __('messages.Source') }}: </label>
-<input type="text" name="Source" id="Source">
-<label for="Amount">{{ __('messages.Amount') }}: </label>
-<input type="text" name="Amount" id="Amount">
-
-<input type="submit" class="add" value="{{ __('messages.add') }}">
-</form>
-</body>
-</html>

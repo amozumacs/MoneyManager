@@ -6,7 +6,39 @@ use App\Http\Controllers\IncomeController;
 <html>
 <head>
   <meta charset="UTF-8">
+  <title>{{ __('messages.Income Search') }}</title>
 </head>
+<h1> {{ __('messages.Income Search') }} </h1>
+<form method="GET" action="{{
+action([App\Http\Controllers\IncomeController::class, 'search']) }}">
+    <input type="text" name="search" required/>
+    <button type="submit" class="search">{{ __('messages.Search') }}</button>
+</form>
+<table style="border: 1px solid black">
+<tr>
+        <td> {{ __('messages.Name') }} </td>
+        <td> {{ __('messages.Source') }} </td>
+        <td> {{ __('messages.Amount') }} </td>
+        <td> {{ __('messages.Date') }} </td>
+        <td> </td>
+        </tr>
+@if($incomes->isNotEmpty())
+@foreach ($incomes as $income)
+        <tr>
+        <td> {{ $income->Name }} </td>
+        <td> {{ $income->Amount }} </td>
+        <td> {{ $income->Source }} </td>
+        <td> {{ $income->created_at }} </td>
+</tr>
+        @endforeach
+</table>
+@else 
+    <div>
+        <h2>{{ __('messages.NoIncome') }}</h2>
+    </div>
+@endif
+<a href="{{ url('/menu') }}"class="return">{{ __('messages.Return') }}</a> 
+</html>
 <style>
         body {
                 font-family: 'Nunito', sans-serif;
@@ -50,34 +82,3 @@ use App\Http\Controllers\IncomeController;
                 font-family: 'Nunito', sans-serif;
             }    
  </style>
-<h1> {{ __('messages.Income Search') }} </h1>
-<form method="GET" action="{{
-action([App\Http\Controllers\IncomeController::class, 'search']) }}">
-    <input type="text" name="search" required/>
-    <button type="submit" class="search">{{ __('messages.Search') }}</button>
-</form>
-<table style="border: 1px solid black">
-<tr>
-        <td> {{ __('messages.Name') }} </td>
-        <td> {{ __('messages.Source') }} </td>
-        <td> {{ __('messages.Amount') }} </td>
-        <td> {{ __('messages.Date') }} </td>
-        <td> </td>
-        </tr>
-@if($incomes->isNotEmpty())
-@foreach ($incomes as $income)
-        <tr>
-        <td> {{ $income->Name }} </td>
-        <td> {{ $income->Amount }} </td>
-        <td> {{ $income->Source }} </td>
-        <td> {{ $income->created_at }} </td>
-</tr>
-        @endforeach
-</table>
-@else 
-    <div>
-        <h2>{{ __('messages.NoIncome') }}</h2>
-    </div>
-@endif
-<a href="{{ url('/menu') }}"class="return">{{ __('messages.Return') }}</a> 
-</html>
