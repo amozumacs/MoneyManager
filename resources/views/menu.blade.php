@@ -44,18 +44,18 @@
         <div class="Totals">
         <h4> {{ __('messages.Totals') }} </h4>
         <p>{{ __('messages.TotalExp') }}: {{$ExpMax}}€ </p>
-        <p>{{ __('messages.ExpCount') }}: {{$ExpCount}}€</p>
+        <p>{{ __('messages.ExpCount') }}: {{$ExpCount}}</p>
         <p>{{ __('messages.TotalInc') }}: {{$IncMax}}€</p>
-        <p>{{ __('messages.IncCount') }}: {{$IncCount}}€</p>
+        <p>{{ __('messages.IncCount') }}: {{$IncCount}}</p>
         <p class="balance">{{ __('messages.TotalBal') }}: {{ $IncMax - $ExpMax}}€</p>
         </div>
         
         <div class="Monthly">
         <h4> {{ __('messages.MonthlyTotals') }} </h4>
         <p>{{ __('messages.MonthlyExp') }}: {{$MExpMax}}€ </p>
-        <p>{{ __('messages.MonthlyExpCount') }}: {{$MExpCount}}€</p>
+        <p>{{ __('messages.MonthlyExpCount') }}: {{$MExpCount}}</p>
         <p>{{ __('messages.MonthlyInc') }}: {{$MIncMax}}€</p>
-        <p>{{ __('messages.MonthlyIncCount') }}: {{$MIncCount}}€</p>
+        <p>{{ __('messages.MonthlyIncCount') }}: {{$MIncCount}}</p>
         <p class = "mbalance">{{ __('messages.MonthlyBal') }}: {{ $MIncMax -$MExpMax }}€</p>
         </div>
         </div>
