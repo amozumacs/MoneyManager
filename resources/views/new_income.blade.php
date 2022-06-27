@@ -15,7 +15,7 @@ action([App\Http\Controllers\IncomeController::class, 'store']) }}">
 <label for="duration">{{ __('messages.Amount') }}: </label>
 <input type="text" name="Amount" id="Amount">
 
-<input type="submit" value="{{ __('messages.add') }}">
+<input type="submit" class="add" value="{{ __('messages.add') }}">
 </form>
 </body>
 </html>
@@ -24,5 +24,18 @@ action([App\Http\Controllers\IncomeController::class, 'store']) }}">
         font-family: 'Nunito', sans-serif;
         background-color:#1D1128;
         color:#E5D4ED;
+    }
+    .add{
+        display: inline-block;
+        outline: 0;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        border-radius: 4px;
+        font-size: 13px;
+        background-color: #1D1128;
+        color: white;
+        padding: 10px 20px;
+        font-family: 'Nunito', sans-serif;
     }
 </style>

@@ -29,7 +29,7 @@
         </table>
         @endif
       
-      
+        <a href="{{ url('/menu') }}"class="return">{{ __('messages.Return') }}</a> 
     </body>
 </html>
 <style>
