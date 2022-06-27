@@ -29,9 +29,9 @@
                          
                         <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">{{ __('messages.Dashboard') }}</a>
                     @else
-                        
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">{{ __('messages.Log In') }}</a>
-                        <a href="{{ url('/menu') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">{{ __('messages.Menu') }}</a> 
+                    <a href="{{ url('/menu') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">{{ __('messages.Menu') }}</a> 
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">{{ __('messages.Log in') }}</a>
+    
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">{{ __('messages.Register') }}</a>
                         @endif
