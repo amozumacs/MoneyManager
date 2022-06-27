@@ -22,7 +22,7 @@
         <tr>
         <td> {{ $expense->Name }} </td>
         <td> {{ $expense->Source }} </td>
-        <td class="amount"> {{ $expense->Amount }} </td>
+        <td class="amount"> {{ $expense->Amount }}€ </td>
         <td> {{ $expense->created_at }} </td>
         <td> 
             <form method="POST" action="{{
