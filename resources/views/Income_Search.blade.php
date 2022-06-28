@@ -27,7 +27,7 @@ action([App\Http\Controllers\IncomeController::class, 'search']) }}">
         <tr>
         <td> {{ $income->Name }} </td>
         <td> {{ $income->Source }} </td>
-        <td> {{ $income->Amount }} </td>
+        <td> {{ $income->Amount }}€ </td>
         <td> {{ $income->created_at }} </td>
 </tr>
         @endforeach

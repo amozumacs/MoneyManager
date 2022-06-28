@@ -26,7 +26,7 @@ action([App\Http\Controllers\ExpenseController::class, 'search']) }}">
         <tr>
         <td> {{ $expense->Name }} </td>
         <td> {{ $expense->Source }} </td>
-        <td> {{ $expense->Amount }} </td>
+        <td> {{ $expense->Amount }}€ </td>
         <td> {{ $expense->created_at }} </td>
 </tr>
         @endforeach
