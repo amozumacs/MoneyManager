@@ -7,16 +7,6 @@ use App\Http\Controllers\IncomeController;
   <title>{{ __('messages.Update Income') }}</title>
   <meta charset="UTF-8">
 </head>
-
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 <h2>{{ __('messages.Update Income') }}:</h2>
 <form action="{{ action([IncomeController::class, 'update'], $income->id ) }}" method="post">
     @csrf
@@ -46,10 +36,16 @@ use App\Http\Controllers\IncomeController;
                 <input type="submit" class="submit" value="{{ __('messages.add') }}" />
             </td>
         </tr>
-
-
-
     </table>
+    @if (count($errors) > 0)
+    <div>
+        <ul>
+        @foreach ($errors->all() as $error)
+            <li class="error">{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 </form>
 </html>
 <style>
@@ -83,5 +79,7 @@ use App\Http\Controllers\IncomeController;
                 padding: 10px 20px;
                 font-family: 'Nunito', sans-serif;
             }
-            
+            .error{
+                color:red;
+            }
 </style>

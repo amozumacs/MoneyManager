@@ -8,15 +8,6 @@ use App\Http\Controllers\ExpenseController;
   <title>{{ __('messages.Update Income') }}</title>
 </head>
 <body>
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 <h2>{{ __('messages.Update Income') }}:</h2>
 <form action="{{ action([ExpenseController::class, 'update'], $expense->id ) }}" method="post">
     @csrf
@@ -48,6 +39,15 @@ use App\Http\Controllers\ExpenseController;
         </tr>
     </table>
 </form>
+@if (count($errors) > 0)
+<div>
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li class="error">{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 </body>
 </html>
 <style>
@@ -81,5 +81,8 @@ use App\Http\Controllers\ExpenseController;
                 color: white;
                 padding: 10px 20px;
                 font-family: 'Nunito', sans-serif;
-            }    
+            }   
+            .error{
+                color:red;
+            } 
 </style>
