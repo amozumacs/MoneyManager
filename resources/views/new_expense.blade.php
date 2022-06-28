@@ -17,9 +17,22 @@ action([App\Http\Controllers\ExpenseController::class, 'store']) }}">
 
 <input type="submit" class="add" value="{{ __('messages.add') }}">
 </form>
+@if (count($errors) > 0)
+<div>
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li class="error">{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 </body>
 </html>
+
 <style>
+    .error{
+        color:red;
+    }
     body {
         font-family: 'Nunito', sans-serif;
         background-color:#1D1128;

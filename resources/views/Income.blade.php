@@ -6,10 +6,11 @@
     </head>
     <body>
         <h1>{{ __('messages.Income') }}</h1>
-       
+        
         @if(count($incomes)==0)
         <p color='red'> {{ __('messages.NoRecord') }}!</p> @else
         <table style="border: 1px solid black">
+        
         
         <tr>
         <td> {{ __('messages.Name') }} </td>

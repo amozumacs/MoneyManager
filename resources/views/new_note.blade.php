@@ -9,15 +9,27 @@
 <form method="POST" action="{{
 action([App\Http\Controllers\NotesController::class, 'store']) }}">
 @csrf
-<label for="title">{{ __('messages.TitleNot') }}: </label>
-<input type="text" name="Title" id="Title">
-<label for="Information">{{ __('messages.InformationNot') }}: </label>
-<input type="text" name="Information" id="Information">
-<input type="submit" class="add" value="{{ __('messages.add') }}">
+    <label for="title">{{ __('messages.TitleNot') }}: </label>
+    <input type="text" name="Title" id="Title">
+    <label for="Information">{{ __('messages.InformationNot') }}: </label>
+    <input type="text" name="Information" id="Information">
+    <input type="submit" class="add" value="{{ __('messages.add') }}">
 </form>
+@if (count($errors) > 0)
+<div>
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li class="error">{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 </body>
 </html>
 <style>
+    .error{
+        color:red;
+    }
     body {
         font-family: 'Nunito', sans-serif;
         background-color:#333745;
